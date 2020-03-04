@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.main-header {
+  height: 150px;
+  background-color: cornflowerblue;
   color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding:0  30px
 }
 
-.App-link {
-  color: #61dafb;
+.header-logo {
+  height: 125px;
 }
 
-@keyframes App-logo-spin {
-  from {
+.header-links {
+  width: 25%;
+  display: flex;
+  justify-content: space-evenly; 
+
+}
+span{
+  font-size: 25px;
+}
+
+.dropdown-toggle{
+ display: none;
+}
+
+.mobile-links{
+  display: none;
+}
+.react-logo {
+  height: 400px;
+  width: 400px;
+  animation-name: spin;
+  animation-duration: .15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.react-logo1 {
+  height: 400px;
+  width: 400px;
+  animation-name: spin;
+  animation-duration: 14s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.react-logo2 {
+  height: 400px;
+  width: 400px;
+  animation-name: spinReverse;
+  animation-duration: 14s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.react-logo:hover{
+  height: 700px;
+  width: 700px;
+}
+@keyframes spin {
+  from{
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@keyframes spinReverse {
+  from{
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 800px){
+  .main-header{
+    height:200px;
+  }
+
+  .header-logo{
+    height:175px;
+  }
+
+  .header-links {
+    width:40%;
+  }
+  .react-logo {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+@media(max-width: 450px){
+  .header-links{
+    display: none
+  }
+
+  .dropdown-toggle{
+    display: initial;
+  }
+
+  .mobile-links{
+    display:initial;
+    height: 150px;
+    width: 150px;
+    background-color: indianred;
+    position: fixed;
+    top: 200px;
+    right: 0px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mobile-links span{
+    border-bottom: 1px solid black;
   }
 }
